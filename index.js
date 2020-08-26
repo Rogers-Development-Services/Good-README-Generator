@@ -6,8 +6,13 @@ const inquirer = require('inquirer');
 const questions = [
     {
         type: "input",
-        message: "What is the title of your README.md?",
-        name: "title"
+        message: "What is your GitHub username?",
+        name: "githubUserName"
+    },
+    {
+        type: "input",
+        message: "What is your email address?",
+        name: "emailAddress"
     }, 
     {
         type: "input",
@@ -60,16 +65,87 @@ const questions = [
 // console.log(typeof questions); //why is questions an object an not an array?
 // console.log(questions[6]); // this logs out the choices for licenses object
 
+const thenableWriteFile = util.promisify(fs.writeFile);
+
+function getReadmeOutput(response) {
+    const githubUserName = response.githubUserName;
+    const emailAddress = response.emailAddress;
+    const title = response.title;
+    const description = response.description;
+    const installationInstructions = response.installationInstructions;
+    const usageInformation = response.usageInformation;
+    const contributionGuidelines = response.contributionGuidelines;
+    const testInstructions = response.testInstructions;
+    const licenseInformation = response.licenseInformation;
+    return `# ${title}
+
+${description}
+
+Click this link to access the [Deployed Application](https://rogers-development-services.github.io/Work-Day-Scheduler/)
+
+## Screenshots
+
+Here is an example of our site in action:
+
+![alt text](https://raw.githubusercontent.com/Rogers-Development-Services/Work-Day-Scheduler/master/Assets/Images/Deployed%20Application.png "Application Img1")
+
+## Instilation
+
+${installationInstructions}
+
+## Usage 
+
+${usageInformation}
+
+## Testing
+
+Testing Instructions: ${testInstructions}
+
+## Future Updates
+
+This application is a work in progress, future updates will include: 
+
+1. Being able to access any day of the year
+2. Styling floppy icon to be the same size as the blue division of each row
+
+## Questions
+
+Share with us with any comments or questions to help us grow! 
+GitHub Profile: [${githubUserName}](https://www.github.com/${githubUserName}"
+Email: [${emailAddress}](${emailAddress})
+
+## Credits
+
+Code template provided by Trilogy Education 
+
+Thanks to ${contributionGuidelines} for providing guidance.
+
+Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
+
+## License
+
+Licensed under the [${licenseInformation}](LICENSE.txt) lincense.`
+}
+
 inquirer
     .prompt(questions)
         .then(function(response) {
+            return getReadmeOutput(response);
         // console.log(response);
         // console.log(response.licenseInformation.toString());
-        fs.writeFile("Readme.json", JSON.stringify(response, null, 4), function() {
+        // fs.writeFile("Readme.json", JSON.stringify(response, null, 4), function() {
+        //     console.log("Your README.md has been created!");
+        // });
+        })
+        .then(function(readmeOutput) {
+            return thenableWriteFile('./README.md', readmeOutput);
+        })
+        .then(function () {
             console.log("Your README.md has been created!");
+        })
+        .catch(function(error) {
+            console.log('An error occured!', error);
         });
-    });
-
 
 // function to write README file
 // function writeToFile(fileName, data) {
