@@ -118,7 +118,7 @@ Here is an example of our app in action:
 
 ![Good README.md Generator](./Assets/Videos/READMEVideo.gif)
 
-## Instilation
+## Installation
 
 ${installationInstructions}
 
@@ -129,6 +129,8 @@ ${usageInformation}
 ### Screenshots
 
 ![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
+
+![DeployedApplication](https://user-images.githubusercontent.com/38272211/91502654-7afa4700-e87d-11ea-9f81-ec8f78a30ab9.jpg)
 
 ## Testing
 
