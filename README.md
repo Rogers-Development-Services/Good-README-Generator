@@ -6,13 +6,21 @@ This CLI application will allow a project creator to spend more time working on 
 ## Table of Contents
 
 [Deployed Application](https://github.com/Rogers-Development-Services/Good-README-Generator#deployed-application)
-[Instillation](https://github.com/Rogers-Development-Services/Good-README-Generator#instillation)
+
+[Installation](https://github.com/Rogers-Development-Services/Good-README-Generator#installation)
+
 [Usage](https://github.com/Rogers-Development-Services/Good-README-Generator#usage)
+
 [Screenshots](https://github.com/Rogers-Development-Services/Good-README-Generator#screenshots)
+
 [Testing](https://github.com/Rogers-Development-Services/Good-README-Generator#testing)
+
 [Future Updates](https://github.com/Rogers-Development-Services/Good-README-Generator#future-updates)
+
 [Questions](https://github.com/Rogers-Development-Services/Good-README-Generator#questions)
+
 [Credits](https://github.com/Rogers-Development-Services/Good-README-Generator#credits)
+
 [License](https://github.com/Rogers-Development-Services/Good-README-Generator#license)
 
 ## Deployed Application
@@ -31,7 +39,7 @@ Input your desired specifications for each prompt, and it will generate a readme
 
 ### Screenshots
 
-![Deployed Application](./Assets/Images/DepolyedApplication.jpg "Application Img1")
+![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
 
 ## Testing
 

@@ -95,13 +95,21 @@ ${description}
 ## Table of Contents
 
 [Deployed Application](https://github.com/${githubUserName}/${title}#deployed-application)
-[Instillation](https://github.com/${githubUserName}/${title}#instillation)
+
+[Installation](https://github.com/${githubUserName}/${title}#installation)
+
 [Usage](https://github.com/${githubUserName}/${title}#usage)
+
 [Screenshots](https://github.com/${githubUserName}/${title}#screenshots)
+
 [Testing](https://github.com/${githubUserName}/${title}#testing)
+
 [Future Updates](https://github.com/${githubUserName}/${title}#future-updates)
+
 [Questions](https://github.com/${githubUserName}/${title}#questions)
+
 [Credits](https://github.com/${githubUserName}/${title}#credits)
+
 [License](https://github.com/${githubUserName}/${title}#license)
 
 ## Deployed Application
@@ -120,7 +128,7 @@ ${usageInformation}
 
 ### Screenshots
 
-![Deployed Application](./Assets/Images/DepolyedApplication.jpg "Application Img1")
+![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
 
 ## Testing
 
