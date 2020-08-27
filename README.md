@@ -29,7 +29,7 @@ Here is an example of our app in action:
 
 ![Good README.md Generator](./Assets/Videos/READMEVideo.gif)
 
-## Instilation
+## Installation
 
 Still unsure, for now download this package as a zip and run npm install Good-README-Generator.
 
