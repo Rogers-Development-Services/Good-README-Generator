@@ -39,6 +39,11 @@ const questions = [
     },
     {
         type: "input",
+        message: "Please submit the url you refrenced from your contributor.",
+        name: "contributor"
+    },
+    {
+        type: "input",
         message: "Is there anyone you'd like to credit as a contributor in developing this app?",
         name: "contributionGuidelines"
     },
@@ -72,8 +77,13 @@ const questions = [
         name: "licenseInformation"
     }
 ];
-// console.log(typeof questions); //why is questions an object an not an array?
-// console.log(questions[6]); // this logs out the choices for licenses object
+//why is questions an object an not an array?
+// console.log(typeof questions[8]); 
+// this logs out the choices for licenses object
+// console.log(questions[8]);
+// this logs out individual index values of choices
+// console.log(typeof questions[8].choices[3]);
+// console.log(questions[8].choices[3]);
 
 const thenableWriteFile = util.promisify(fs.writeFile);
 
@@ -84,6 +94,7 @@ function getReadmeOutput(response) {
     const description = response.description;
     const installationInstructions = response.installationInstructions;
     const usageInformation = response.usageInformation;
+    const contributor = response.contributor;
     const contributionGuidelines = response.contributionGuidelines;
     const testInstructions = response.testInstructions;
     const licenseInformation = response.licenseInformation;
@@ -126,9 +137,13 @@ ${installationInstructions}
 
 ${usageInformation}
 
+Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
+
 ### Screenshots
 
 ![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
+
+![DeployedApplication](https://user-images.githubusercontent.com/38272211/91502654-7afa4700-e87d-11ea-9f81-ec8f78a30ab9.jpg)
 
 ## Testing
 
@@ -150,13 +165,15 @@ Email: [${emailAddress}](${emailAddress})
 
 Code template provided by Trilogy Education 
 
-Thanks to ${contributionGuidelines} for providing guidance.
+Thanks to [${contributor}](${contributionGuidelines}) for providing guidance.
 
 Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
 
 Thank you [Al-Waleed Shihadeh](https://medium.com/better-programming/add-badges-to-a-github-repository-716d2988dc6a) for the tutorial on adding GitHub Badges to my Repository.
 
 Grateful for [Kelli Balock](https://dev.to/kelli/demo-your-app-in-your-github-readme-with-an-animated-gif-2o3c) for instructions to create and upload .gif files to a GitHub Readme.md.
+
+Thankful for [Dan Shahin](https://www.youtube.com/watch?v=nvPOUdz5PL4) for providing a workaround for uploading images to github for your README.md. 
 
 ## Licenses
 
@@ -167,7 +184,7 @@ inquirer
     .prompt(questions)
         .then(function(response) {
             return getReadmeOutput(response);
-        // console.log(response);
+        console.log(response);
         // console.log(response.licenseInformation.toString());
         // fs.writeFile("Readme.json", JSON.stringify(response, null, 4), function() {
         //     console.log("Your README.md has been created!");
@@ -182,15 +199,3 @@ inquirer
         .catch(function(error) {
             console.log('An error occured!', error);
         });
-
-// function to write README file
-// function writeToFile(fileName, data) {
-// }
-
-// function to initialize program
-// function init() {
-
-// }
-
-// function call to initialize program
-// init();
