@@ -16,6 +16,11 @@ const questions = [
     }, 
     {
         type: "input",
+        message: "What is the title of your README.md??",
+        name: "title"
+    }, 
+    {
+        type: "input",
         message: "How would you describe this app?",
         name: "description"
     },
@@ -83,6 +88,17 @@ ${description}
 
 Click this link to access the [Deployed Application](https://rogers-development-services.github.io/Work-Day-Scheduler/)
 
+## Table of Contents
+
+(Screenshots)[https://github.com/${githubUserName}/${title}#screenshots]
+(Instillation)[https://github.com/${githubUserName}/${title}#instillation]
+(Usage)[https://github.com/${githubUserName}/${title}#usage]
+(Testing)[https://github.com/${githubUserName}/${title}#testing]
+(Future Updates)[https://github.com/${githubUserName}/${title}#future-updates]
+(Questions)[https://github.com/${githubUserName}/${title}#questions]
+(Credits)[https://github.com/${githubUserName}/${title}#credits]
+(License)[https://github.com/${githubUserName}/${title}#license]
+
 ## Screenshots
 
 Here is an example of our site in action:
@@ -105,9 +121,6 @@ Testing Instructions: ${testInstructions}
 
 This application is a work in progress, future updates will include: 
 
-1. Being able to access any day of the year
-2. Styling floppy icon to be the same size as the blue division of each row
-
 ## Questions
 
 Share with us with any comments or questions to help us grow! 
@@ -122,9 +135,9 @@ Thanks to ${contributionGuidelines} for providing guidance.
 
 Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
 
-## License
+## Licenses
 
-Licensed under the [${licenseInformation}](LICENSE.txt) lincense.`
+Licensed under the ${licenseInformation} lincense(s).`
 }
 
 inquirer
