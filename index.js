@@ -28,6 +28,9 @@ const questions = [
         type: "editor", 
         message: "What are the instillation instructions for your app?",
         name: "installationInstructions"
+        // ```bash
+        // npm install Good-README-Generator????
+        // ```
     },
     {
         type: "editor", 
@@ -89,24 +92,23 @@ function getReadmeOutput(response) {
 
 ${description}
 
-Click this link to access the [Deployed Application](https://rogers-development-services.github.io/Work-Day-Scheduler/)
-
 ## Table of Contents
 
-[Screenshots](https://github.com/${githubUserName}/${title}#screenshots)
+[Deployed Application](https://github.com/${githubUserName}/${title}#deployed-application)
 [Instillation](https://github.com/${githubUserName}/${title}#instillation)
 [Usage](https://github.com/${githubUserName}/${title}#usage)
+[Screenshots](https://github.com/${githubUserName}/${title}#screenshots)
 [Testing](https://github.com/${githubUserName}/${title}#testing)
 [Future Updates](https://github.com/${githubUserName}/${title}#future-updates)
 [Questions](https://github.com/${githubUserName}/${title}#questions)
 [Credits](https://github.com/${githubUserName}/${title}#credits)
 [License](https://github.com/${githubUserName}/${title}#license)
 
-## Screenshots
+## Deployed Application
 
-Here is an example of our site in action:
+Here is an example of our app in action: 
 
-![alt text](https://raw.githubusercontent.com/Rogers-Development-Services/Work-Day-Scheduler/master/Assets/Images/Deployed%20Application.png "Application Img1")
+![Good README.md Generator](./Assets/Videos/READMEVideo.gif)
 
 ## Instilation
 
@@ -115,6 +117,10 @@ ${installationInstructions}
 ## Usage 
 
 ${usageInformation}
+
+### Screenshots
+
+![Deployed Application](./Assets/Images/DepolyedApplication.jpg "Application Img1")
 
 ## Testing
 
@@ -139,6 +145,10 @@ Code template provided by Trilogy Education
 Thanks to ${contributionGuidelines} for providing guidance.
 
 Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
+
+Thank you [Al-Waleed Shihadeh](https://medium.com/better-programming/add-badges-to-a-github-repository-716d2988dc6a) for the tutorial on adding GitHub Badges to my Repository.
+
+Grateful for [Kelli Balock](https://dev.to/kelli/demo-your-app-in-your-github-readme-with-an-animated-gif-2o3c) for instructions to create and upload .gif files to a GitHub Readme.md.
 
 ## Licenses
 
