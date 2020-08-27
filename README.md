@@ -1,3 +1,4 @@
+![GitHub](https://img.shields.io/github/license/Rogers-Development-Services/Good-README-Generator)
 # Good-README-Generator
 
 This CLI application will allow a project creator to spend more time working on finishing the project and less time creating a professional README.md. When creating an open source project on GitHub, it is important to have a quality README with information about the app--what is the app for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project.
@@ -6,14 +7,14 @@ Click this link to access the [Deployed Application](https://rogers-development-
 
 ## Table of Contents
 
-(Screenshots)[https://github.com/Rogers-Development-Services/Good-README-Generator#screenshots]
-(Instillation)[https://github.com/Rogers-Development-Services/Good-README-Generator#instillation]
-(Usage)[https://github.com/Rogers-Development-Services/Good-README-Generator#usage]
-(Testing)[https://github.com/Rogers-Development-Services/Good-README-Generator#testing]
-(Future Updates)[https://github.com/Rogers-Development-Services/Good-README-Generator#future-updates]
-(Questions)[https://github.com/Rogers-Development-Services/Good-README-Generator#questions]
-(Credits)[https://github.com/Rogers-Development-Services/Good-README-Generator#credits]
-(License)[https://github.com/Rogers-Development-Services/Good-README-Generator#license]
+[Screenshots](https://github.com/Rogers-Development-Services/Good-README-Generator#screenshots)
+[Instillation](https://github.com/Rogers-Development-Services/Good-README-Generator#instillation)
+[Usage](https://github.com/Rogers-Development-Services/Good-README-Generator#usage)
+[Testing](https://github.com/Rogers-Development-Services/Good-README-Generator#testing)
+[Future Updates](https://github.com/Rogers-Development-Services/Good-README-Generator#future-updates)
+[Questions](https://github.com/Rogers-Development-Services/Good-README-Generator#questions)
+[Credits](https://github.com/Rogers-Development-Services/Good-README-Generator#credits)
+[License](https://github.com/Rogers-Development-Services/Good-README-Generator#license)
 
 ## Screenshots
 
@@ -40,7 +41,9 @@ This application is a work in progress, future updates will include:
 ## Questions
 
 Share with us with any comments or questions to help us grow! 
-GitHub Profile: [Rogers-Development-Services](https://www.github.com/Rogers-Development-Services"
+
+GitHub Profile: [Rogers-Development-Services](https://www.github.com/Rogers-Development-Services)
+
 Email: [matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
 
 ## Credits
@@ -53,4 +56,4 @@ Aquired guidance around using the node.js library inquirer from [joshtronic](htt
 
 ## Licenses
 
-Licensed under the MIT License,GNU General Public License v2.0 lincense(s).
+Licensed under the MIT License lincense(s).

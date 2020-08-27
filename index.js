@@ -20,17 +20,17 @@ const questions = [
         name: "title"
     }, 
     {
-        type: "input",
+        type: "editor", 
         message: "How would you describe this app?",
         name: "description"
     },
     {
-        type: "input",
+        type: "editor", 
         message: "What are the instillation instructions for your app?",
         name: "installationInstructions"
     },
     {
-        type: "input",
+        type: "editor", 
         message: "How would you explain how to use this app to a complete beginner?",
         name: "usageInformation"
     },
@@ -45,7 +45,9 @@ const questions = [
         name: "testInstructions"
     },
     {
-        type: 'checkbox',
+        type: 'checkbox', 
+        //is there a way to make a space or generate a license.txt for each?
+        //how do I handle multiple badges?
         message: "Which licence(s) does your app fall under?",
         choices: 
             [
@@ -82,7 +84,8 @@ function getReadmeOutput(response) {
     const contributionGuidelines = response.contributionGuidelines;
     const testInstructions = response.testInstructions;
     const licenseInformation = response.licenseInformation;
-    return `# ${title}
+    return `![GitHub](https://img.shields.io/github/license/${githubUserName}/${title})
+# ${title}
 
 ${description}
 
@@ -90,14 +93,14 @@ Click this link to access the [Deployed Application](https://rogers-development-
 
 ## Table of Contents
 
-(Screenshots)[https://github.com/${githubUserName}/${title}#screenshots]
-(Instillation)[https://github.com/${githubUserName}/${title}#instillation]
-(Usage)[https://github.com/${githubUserName}/${title}#usage]
-(Testing)[https://github.com/${githubUserName}/${title}#testing]
-(Future Updates)[https://github.com/${githubUserName}/${title}#future-updates]
-(Questions)[https://github.com/${githubUserName}/${title}#questions]
-(Credits)[https://github.com/${githubUserName}/${title}#credits]
-(License)[https://github.com/${githubUserName}/${title}#license]
+[Screenshots](https://github.com/${githubUserName}/${title}#screenshots)
+[Instillation](https://github.com/${githubUserName}/${title}#instillation)
+[Usage](https://github.com/${githubUserName}/${title}#usage)
+[Testing](https://github.com/${githubUserName}/${title}#testing)
+[Future Updates](https://github.com/${githubUserName}/${title}#future-updates)
+[Questions](https://github.com/${githubUserName}/${title}#questions)
+[Credits](https://github.com/${githubUserName}/${title}#credits)
+[License](https://github.com/${githubUserName}/${title}#license)
 
 ## Screenshots
 
@@ -124,7 +127,9 @@ This application is a work in progress, future updates will include:
 ## Questions
 
 Share with us with any comments or questions to help us grow! 
-GitHub Profile: [${githubUserName}](https://www.github.com/${githubUserName}"
+
+GitHub Profile: [${githubUserName}](https://www.github.com/${githubUserName})
+
 Email: [${emailAddress}](${emailAddress})
 
 ## Credits
