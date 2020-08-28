@@ -28,9 +28,6 @@ const questions = [
         type: "editor", 
         message: "What are the instillation instructions for your app?",
         name: "installationInstructions"
-        // ```bash
-        // npm install Good-README-Generator????
-        // ```
     },
     {
         type: "editor", 
@@ -39,13 +36,14 @@ const questions = [
     },
     {
         type: "input",
-        message: "Please submit the url you refrenced from your contributor.",
-        name: "contributor"
+        message: "Is there anyone you'd like to credit as a contributor in developing this app?",
+        name: "contributionGuidelines"
+        // able to submit multiple people? with links?
     },
     {
         type: "input",
-        message: "Is there anyone you'd like to credit as a contributor in developing this app?",
-        name: "contributionGuidelines"
+        message: "Please submit the url you refrenced from your contributor.",
+        name: "contributor"
     },
     {
         type: "input",
@@ -98,7 +96,17 @@ function getReadmeOutput(response) {
     const contributionGuidelines = response.contributionGuidelines;
     const testInstructions = response.testInstructions;
     const licenseInformation = response.licenseInformation;
-    return `![GitHub](https://img.shields.io/github/license/${githubUserName}/${title})
+    // console.log(typeof licenseInformation);
+    // console.log(licenseInformation);
+
+    let licenseBadges = "";
+
+    // array is usually plural and the variable is singular for naming convention
+    licenseInformation.forEach(license => {
+      licenseBadges = licenseBadges + `![GitHub license](https://img.shields.io/badge/license-${encodeURIComponent(license)}-green.svg) `;
+    });
+
+    return `${licenseBadges}
 # ${title}
 
 ${description}
@@ -133,6 +141,10 @@ Here is an example of our app in action:
 
 ${installationInstructions}
 
+\`\`\`bash
+npm install Good-README-Generator
+\`\`\`
+
 ## Usage 
 
 ${usageInformation}
@@ -148,6 +160,10 @@ Make sure when the application prompts you to "Press <enter>" and you write your
 ## Testing
 
 Testing Instructions: ${testInstructions}
+
+\`\`\`bash
+npm test
+\`\`\`
 
 ## Future Updates
 
