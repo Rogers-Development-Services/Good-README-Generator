@@ -31,7 +31,9 @@ Here is an example of our app in action:
 
 ## Installation
 
-Still unsure, for now download this package as a zip and run npm install Good-README-Generator.
+Download this package, open your command line interface and run npm install. This should install the following dependencies aswell: fs, inquirer, and util.
+
+Next run the following command to start the app: "node index.js"
 
 ```bash
 npm install Good-README-Generator
@@ -40,6 +42,8 @@ npm install Good-README-Generator
 ## Usage 
 
 Input your desired specifications for each prompt, and it will generate a readme. It would be helpful for you to visualize how you'd like to see the readme.md presented, and take a moment to answer the required questions in a text editor before inputing them into this program. Then copy and paste each response question by question, that way you wont have to retype.
+
+Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.
 
 Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
 
@@ -51,7 +55,11 @@ Make sure when the application prompts you to "Press <enter>" and you write your
 
 ## Testing
 
-Testing Instructions: none
+Testing Instructions: Currently, there is no testing for this app. If you'd like to write one, change the scripts property in package json file.
+
+```bash
+npm test
+```
 
 ## Future Updates
 
@@ -69,7 +77,7 @@ Email: [matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
 
 Code template provided by Trilogy Education 
 
-Thanks to [Unknown](Steven Jirjis) for providing guidance.
+Thanks to [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent](Steven Jirjis) for providing guidance.
 
 Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
 

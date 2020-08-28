@@ -37,13 +37,13 @@ const questions = [
     {
         type: "input",
         message: "Is there anyone you'd like to credit as a contributor in developing this app?",
-        name: "contributionGuidelines"
+        name: "contributor"
         // able to submit multiple people? with links?
     },
     {
         type: "input",
         message: "Please submit the url you refrenced from your contributor.",
-        name: "contributor"
+        name: "contributionGuidelines"
     },
     {
         type: "input",
