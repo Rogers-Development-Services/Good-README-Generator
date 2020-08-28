@@ -1,81 +1,94 @@
 const fs = require('fs');
 const util = require('util');
 const inquirer = require('inquirer');
+const { type } = require('os');
 
 // array of questions for user
 const questions = [
+    // {
+    //     type: "input",
+    //     message: "What is your GitHub username?",
+    //     name: "githubUserName"
+    // },
+    // {
+    //     type: "input",
+    //     message: "What is your email address?",
+    //     name: "emailAddress"
+    // }, 
+    // {
+    //     type: "input",
+    //     message: "What is the title of your README.md??",
+    //     name: "title"
+    // }, 
+    // {
+    //     type: "editor", 
+    //     message: "How would you describe this app?",
+    //     name: "description"
+    // },
+    // {
+    //     type: "editor", 
+    //     message: "What are the instillation instructions for your app?",
+    //     name: "installationInstructions"
+    // },
+    // {
+    //     type: "editor", 
+    //     message: "How would you explain how to use this app to a complete beginner?",
+    //     name: "usageInformation"
+    // },
     {
-        type: "input",
-        message: "What is your GitHub username?",
-        name: "githubUserName"
+        type: "confirm",
+        message: "Would you like to give credit to helping you create your app?",
+        name: "verifyContribution"
     },
     {
         type: "input",
-        message: "What is your email address?",
-        name: "emailAddress"
-    }, 
-    {
-        type: "input",
-        message: "What is the title of your README.md??",
-        name: "title"
-    }, 
-    {
-        type: "editor", 
-        message: "How would you describe this app?",
-        name: "description"
-    },
-    {
-        type: "editor", 
-        message: "What are the instillation instructions for your app?",
-        name: "installationInstructions"
-    },
-    {
-        type: "editor", 
-        message: "How would you explain how to use this app to a complete beginner?",
-        name: "usageInformation"
-    },
-    {
-        type: "input",
-        message: "Is there anyone you'd like to credit as a contributor in developing this app?",
-        name: "contributor"
+        message: "What is the name of person you'd like to credit as a contributor in developing this app?",
+        name: "contributor",
+        when: (response) => response.verifyContribution === true
         // able to submit multiple people? with links?
     },
     {
         type: "input",
         message: "Please submit the url you refrenced from your contributor.",
-        name: "contributionGuidelines"
+        name: "contributionGuidelines",
+        when: (response) => response.verifyContribution === true
+    },
+    {
+        type: "confirm",
+        message: "Is there anyone else who you'd like to contribute for this app?",
+        name: "creditDue",
+        when: (response) => response.verifyContribution === true
     },
     {
         type: "input",
         message: "What instructions would you like to write for testing your app?",
         name: "testInstructions"
     },
-    {
-        type: 'checkbox', 
-        //is there a way to make a space or generate a license.txt for each?
-        //how do I handle multiple badges?
-        message: "Which licence(s) does your app fall under?",
-        choices: 
-            [
-            'None',
-            'Apache License 2.0',
-            'GNU General Public License v3.0',
-            'MIT License',
-            'BSD 2-Clause "Simplified" License',
-            'BSD 3-Clause "New" or "Revised" License',
-            'Boost Software License 1.0',
-            'Creative Commons Zero v1.0 Universal',
-            'Eclipse Public License 2.0',
-            'GNU Affero General Public License v3.0',
-            'GNU General Public License v2.0',
-            'GNU Lesser General Public License v2.1',
-            'Mozilla Public License 2.0',
-            'The Unlicense'
-            ],
-        name: "licenseInformation"
-    }
+    // {
+    //     type: 'checkbox', 
+    //     //is there a way to make a space or generate a license.txt for each?
+    //     //how do I space the licences apart with spacing in between each
+    //     message: "Which licence(s) does your app fall under?",
+    //     choices: 
+    //         [
+    //         'None',
+    //         'Apache License 2.0',
+    //         'GNU General Public License v3.0',
+    //         'MIT License',
+    //         'BSD 2-Clause "Simplified" License',
+    //         'BSD 3-Clause "New" or "Revised" License',
+    //         'Boost Software License 1.0',
+    //         'Creative Commons Zero v1.0 Universal',
+    //         'Eclipse Public License 2.0',
+    //         'GNU Affero General Public License v3.0',
+    //         'GNU General Public License v2.0',
+    //         'GNU Lesser General Public License v2.1',
+    //         'Mozilla Public License 2.0',
+    //         'The Unlicense'
+    //         ],
+    //     name: "licenseInformation"
+    // } //possibly give the user a preview of the readme in raw for using an inquirer type confirm?
 ];
-//why is questions an object an not an array?
 // console.log(typeof questions[8]); 
 // this logs out the choices for licenses object
 // console.log(questions[8]);
@@ -86,22 +99,22 @@ const questions = [
 const thenableWriteFile = util.promisify(fs.writeFile);
 
 function getReadmeOutput(response) {
-    const githubUserName = response.githubUserName;
-    const emailAddress = response.emailAddress;
-    const title = response.title;
-    const description = response.description;
-    const installationInstructions = response.installationInstructions;
-    const usageInformation = response.usageInformation;
+    // const githubUserName = response.githubUserName;
+    // const emailAddress = response.emailAddress;
+    // const title = response.title;
+    // const description = response.description;
+    // const installationInstructions = response.installationInstructions;
+    // const usageInformation = response.usageInformation;
     const contributor = response.contributor;
     const contributionGuidelines = response.contributionGuidelines;
     const testInstructions = response.testInstructions;
-    const licenseInformation = response.licenseInformation;
-    // console.log(typeof licenseInformation);
+    // const licenseInformation = response.licenseInformation;
+    // console.log(typeof contributor);     //string
+    // console.log(typeof licenseInformation);      //array
     // console.log(licenseInformation);
 
     let licenseBadges = "";
 
-    // array is usually plural and the variable is singular for naming convention
     licenseInformation.forEach(license => {
       licenseBadges = licenseBadges + `![GitHub license](https://img.shields.io/badge/license-${encodeURIComponent(license)}-green.svg) `;
     });
@@ -142,7 +155,7 @@ Here is an example of our app in action:
 ${installationInstructions}
 
 \`\`\`bash
-npm install Good-README-Generator
+npm install 
 \`\`\`
 
 ## Usage 
@@ -152,8 +165,6 @@ ${usageInformation}
 Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
 
 ### Screenshots
-
-![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
 
 ![DeployedApplication](https://user-images.githubusercontent.com/38272211/91502654-7afa4700-e87d-11ea-9f81-ec8f78a30ab9.jpg)
 
@@ -191,6 +202,8 @@ Grateful for [Kelli Balock](https://dev.to/kelli/demo-your-app-in-your-github-re
 
 Thankful for [Dan Shahin](https://www.youtube.com/watch?v=nvPOUdz5PL4) for providing a workaround for uploading images to github for your README.md. 
 
+Grateful for [Mat Wilmot](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f) for how to use Inquirer.js, specificly the type: when.
+
 ## Licenses
 
 Licensed under the ${licenseInformation} lincense(s).`
@@ -199,8 +212,8 @@ Licensed under the ${licenseInformation} lincense(s).`
 inquirer
     .prompt(questions)
         .then(function(response) {
+            // if (response.creditDue) {}
             return getReadmeOutput(response);
-        console.log(response);
         // console.log(response.licenseInformation.toString());
         // fs.writeFile("Readme.json", JSON.stringify(response, null, 4), function() {
         //     console.log("Your README.md has been created!");
