@@ -1,10 +1,7 @@
-![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-green.svg) ![GitHub license](https://img.shields.io/badge/license-GNU%20General%20Public%20License%20v3.0-green.svg) ![GitHub license](https://img.shields.io/badge/license-MIT%20License-green.svg) 
+![GitHub license](https://img.shields.io/badge/license-GNU%20General%20Public%20License%20v3.0-green.svg) ![GitHub license](https://img.shields.io/badge/license-MIT%20License-green.svg) 
 # Good-README-Generator
-
 This CLI application will allow a project creator to spend more time working on finishing the project and less time creating a professional README. When creating an open source project on GitHub, it is important to have a quality README with information about the app--what is the app for, how to use the app, how to install it, how to report issues, and how to make contributions so that other developers are more likely to use and contribute to the success of the project.
-
 ## Table of Contents
-
 [Deployed Application](https://github.com/Rogers-Development-Services/Good-README-Generator#deployed-application)
 
 [Installation](https://github.com/Rogers-Development-Services/Good-README-Generator#installation)
@@ -36,22 +33,26 @@ Download this package, open your command line interface and run npm install. Thi
 Next run the following command to start the app: "node index.js"
 
 ```bash
-npm install Good-README-Generator
+npm install 
 ```
 
 ## Usage 
 
 Input your desired specifications for each prompt, and it will generate a readme. It would be helpful for you to visualize how you'd like to see the readme.md presented, and take a moment to answer the required questions in a text editor before inputing them into this program. Then copy and paste each response question by question, that way you wont have to retype.
 
-Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.
+Make sure when the application prompts you to "Press " and you write your response in a text editor you close and SAVE the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.
+
+Make sure when the application prompts you to "Press " and you write your response in a text editor you close and SAVE the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
 
 Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
 
 ### Screenshots
 
-![Deployed Application](./Assets/Images/DepolyedApplication.jpg?raw=true "Application Img1")
-
 ![DeployedApplication](https://user-images.githubusercontent.com/38272211/91502654-7afa4700-e87d-11ea-9f81-ec8f78a30ab9.jpg)
+
+### Videos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k_QyF4_7Ims" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Testing
 
@@ -62,8 +63,9 @@ npm test
 ```
 
 ## Future Updates
-
 This application is a work in progress, future updates will include: 
+1. A test to prevent users from inputing github usernames which don't exsist.
+2. Functionality to add multiple contributors to the readme with their respective URLs.
 
 ## Questions
 
@@ -76,8 +78,7 @@ Email: [matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
 ## Credits
 
 Code template provided by Trilogy Education 
-
-Thanks to [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent](Steven Jirjis) for providing guidance.
+Thanks to [Andrew Kil](  https://andrewkil.com/) for providing guidance.
 
 Aquired guidance around using the node.js library inquirer from [joshtronic](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
 
@@ -87,6 +88,7 @@ Grateful for [Kelli Balock](https://dev.to/kelli/demo-your-app-in-your-github-re
 
 Thankful for [Dan Shahin](https://www.youtube.com/watch?v=nvPOUdz5PL4) for providing a workaround for uploading images to github for your README.md. 
 
-## Licenses
+Grateful for [Mat Wilmot](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f) for how to use Inquirer.js, specificly the type: when.
 
-Licensed under the Apache License 2.0,GNU General Public License v3.0,MIT License lincense(s).
+## Licenses
+Licensed under the GNU General Public License v3.0,MIT License lincense(s).

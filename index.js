@@ -3,38 +3,8 @@ const util = require('util');
 const inquirer = require('inquirer');
 const { type } = require('os');
 
-// array of questions for user
-const questions = [
-    // {
-    //     type: "input",
-    //     message: "What is your GitHub username?",
-    //     name: "githubUserName"
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is your email address?",
-    //     name: "emailAddress"
-    // }, 
-    // {
-    //     type: "input",
-    //     message: "What is the title of your README.md??",
-    //     name: "title"
-    // }, 
-    // {
-    //     type: "editor", 
-    //     message: "How would you describe this app?",
-    //     name: "description"
-    // },
-    // {
-    //     type: "editor", 
-    //     message: "What are the instillation instructions for your app?",
-    //     name: "installationInstructions"
-    // },
-    // {
-    //     type: "editor", 
-    //     message: "How would you explain how to use this app to a complete beginner?",
-    //     name: "usageInformation"
-    // },
+// array of contributor questions
+const contributorsQuestions = [
     {
         type: "confirm",
         message: "Would you like to give credit to helping you create your app?",
@@ -56,14 +26,73 @@ const questions = [
     {
         type: "confirm",
         message: "Is there anyone else who you'd like to contribute for this app?",
-        name: "creditDue",
+        name: "confirmed",
         when: (response) => response.verifyContribution === true
     },
+]
+
+// array of questions for user
+const questions = [
+    // {
+    //     type: "input",
+    //     message: "What is your GitHub username?",
+    //     name: "githubUserName"
+    // },
     {
         type: "input",
-        message: "What instructions would you like to write for testing your app?",
-        name: "testInstructions"
+        message: "What is your email address?",
+        name: "emailAddress"
+    }, 
+    {
+        type: "input",
+        message: "What is the title of your README.md??",
+        name: "title"
+    }, 
+    // {
+    //     type: "editor", 
+    //     message: "How would you describe this app?",
+    //     name: "description"
+    // },
+    // {
+    //     type: "editor", 
+    //     message: "What are the instillation instructions for your app?",
+    //     name: "installationInstructions"
+    // },
+    // {
+    //     type: "editor", 
+    //     message: "How would you explain how to use this app to a complete beginner?",
+    //     name: "usageInformation"
+    // },
+    {
+        type: "confirm",
+        message: "Would you like to give credit to helping you create your app?",
+        name: "verifyContribution",
+        // when: (response) => response.verifyContribution === true
     },
+    // {
+    //     type: "input",
+    //     message: "What is the name of person you'd like to credit as a contributor in developing this app?",
+    //     name: "contributor",
+    //     when: (response) => response.verifyContribution === true
+    //     // able to submit multiple people? with links?
+    // },
+    // {
+    //     type: "input",
+    //     message: "Please submit the url you refrenced from your contributor.",
+    //     name: "contributionGuidelines",
+    //     when: (response) => response.verifyContribution === true
+    // },
+    // {
+    //     type: "confirm",
+    //     message: "Is there anyone else who you'd like to contribute for this app?",
+    //     name: "confirmed",
+    //     when: (response) => response.verifyContribution === true
+    // },
+    // {
+    //     type: "input",
+    //     message: "What instructions would you like to write for testing your app?",
+    //     name: "testInstructions"
+    // },
     // {
     //     type: 'checkbox', 
     //     //is there a way to make a space or generate a license.txt for each?
@@ -209,22 +238,71 @@ Grateful for [Mat Wilmot](https://medium.com/javascript-in-plain-english/how-to-
 Licensed under the ${licenseInformation} lincense(s).`
 }
 
+async function promptContributor(contributors = []) {
+    return await inquirer
+        .prompt(contributorsQuestions) /// try asnyc await for the prompt
+            .then(function(contributorResponse) {
+                // console.log("Prompt Contributor ", contributorResponse )
+
+                contributors.push(contributorResponse);
+                // console.log(contributorResponse);
+
+                if (contributorResponse.confirmed) {
+
+                    console.log("if true");
+                    promptContributor(contributors);
+
+                }else {
+                    
+                    console.log("if false");
+                    return contributors
+                }
+            })
+}
+
 inquirer
     .prompt(questions)
-        .then(function(response) {
-            // if (response.creditDue) {}
-            return getReadmeOutput(response);
-        // console.log(response.licenseInformation.toString());
-        // fs.writeFile("Readme.json", JSON.stringify(response, null, 4), function() {
-        //     console.log("Your README.md has been created!");
-        // });
+        .then( async function(response) {
+            console.log(response);
+            if (response.verifyContribution) {
+                var contributors = await promptContributor();
+                console.log("Check", contributors);
+            }
         })
         .then(function(readmeOutput) {
-            return thenableWriteFile('./README.md', readmeOutput);
+            // return thenableWriteFile('./README.md', readmeOutput);
+            // console.log("Your README.md has been created!1");
         })
         .then(function () {
-            console.log("Your README.md has been created!");
+            // console.log("Your README.md has been created!2");
         })
         .catch(function(error) {
             console.log('An error occured!', error);
         });
+
+
+        //call inquirer 2x
+        //create a new inquirer call and array containing prompts for contributors which runs until falsey data, to capture how many contributors the user wants to imput
+//////////////////////////////////////////////////////
+        // function Contribution({
+        //     type,
+        //     message,
+        //     name
+        // }) {
+        //     this.type = type;
+        //     this.message = message;
+        //     this.name = name;
+        // };
+        // Contribution.prototype = {
+        //     whenable: (response) => response.verifyContribution === true
+        //     }
+        // };
+        
+        // // I want to create a protype object which stores multiple contributors and generates an array to store each. Then I want to print them into my template literal.
+        
+        
+        
+        // let contributors = [];
+        
+        // contributors.push({response.contribtor: response.contributionGuidelines});
+        
