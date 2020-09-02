@@ -10,6 +10,8 @@ This CLI application will allow a project creator to spend more time working on 
 
 [Screenshots](https://github.com/Rogers-Development-Services/Good-README-Generator#screenshots)
 
+[Videos](https://github.com/Rogers-Development-Services/Good-README-Generator#videos)
+
 [Testing](https://github.com/Rogers-Development-Services/Good-README-Generator#testing)
 
 [Future Updates](https://github.com/Rogers-Development-Services/Good-README-Generator#future-updates)
