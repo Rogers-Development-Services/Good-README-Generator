@@ -52,7 +52,7 @@ Make sure when the application prompts you to "Press <enter>" and you write your
 
 ### Videos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k_QyF4_7Ims" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Tutorial](https://www.youtube.com/watch?v=k_QyF4_7Ims)
 
 ## Testing
 
