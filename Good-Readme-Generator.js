@@ -125,6 +125,8 @@ ${description}
 
 [Screenshots](https://github.com/${githubUserName}/${title}#screenshots)
 
+[Videos](https://github.com/${githubUserName}/${title}#svideos)
+
 [Testing](https://github.com/${githubUserName}/${title}#testing)
 
 [Future Updates](https://github.com/${githubUserName}/${title}#future-updates)
@@ -161,6 +163,7 @@ Make sure when the application prompts you to "Press <enter>" and you write your
 
 ### Videos
 
+[![Video Tutorial](https://img.youtube.com/vi/k_QyF4_7Ims/0.jpg)](https://www.youtube.com/watch?v=k_QyF4_7Ims)
 
 ## Testing
 

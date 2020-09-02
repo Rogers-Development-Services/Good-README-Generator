@@ -52,7 +52,7 @@ Make sure when the application prompts you to "Press <enter>" and you write your
 
 ### Videos
 
-[![Video Tutorial](https://www.youtube.com/watch?v=k_QyF4_7Ims)
+[![Video Tutorial](https://img.youtube.com/vi/k_QyF4_7Ims/0.jpg)](https://www.youtube.com/watch?v=k_QyF4_7Ims)
 
 ## Testing
 
