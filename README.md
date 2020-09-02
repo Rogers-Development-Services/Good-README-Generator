@@ -40,11 +40,9 @@ npm install
 
 Input your desired specifications for each prompt, and it will generate a readme. It would be helpful for you to visualize how you'd like to see the readme.md presented, and take a moment to answer the required questions in a text editor before inputing them into this program. Then copy and paste each response question by question, that way you wont have to retype.
 
-Make sure when the application prompts you to "Press " and you write your response in a text editor you close and SAVE the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.
-
-Make sure when the application prompts you to "Press " and you write your response in a text editor you close and SAVE the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
-
 Make sure when the application prompts you to "Press <enter>" and you write your response in a text editor you close and <strong>SAVE</strong> the file. The application will still display "Received" even if you don't save, but it will not be recorded to your README.md.
+
+Note: You can select multiple licenses for your readme.
 
 ### Screenshots
 
